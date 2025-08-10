@@ -194,6 +194,22 @@
                 <version>9.2.3.v20140905</version>
             </plugin>
 			
+			<build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.4.0</version> <!-- Use a recent, stable version -->
+                <configuration>
+                    <!-- Optional: Add specific configurations here if needed -->
+                    <!-- For example, to include additional resources or customize the manifest -->
+                    <!-- <webResources> ... </webResources> -->
+                    <!-- <archive> ... </archive> -->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+			
 						<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
@@ -525,23 +541,6 @@
                     </plugin>  -->
                 </plugins>
             </reporting>
-			<reporting>
-				<build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>3.4.0</version> <!-- Use a recent, stable version -->
-                <configuration>
-                    <!-- Optional: Add specific configurations here if needed -->
-                    <!-- For example, to include additional resources or customize the manifest -->
-                    <!-- <webResources> ... </webResources> -->
-                    <!-- <archive> ... </archive> -->
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-			</reporting>
         </profile>
     </profiles>
 
