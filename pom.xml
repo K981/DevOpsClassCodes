@@ -57,9 +57,11 @@
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
-			<id>maven2</id> 
-    <url>https://repo.maven.apache.org/maven2/</url>
         </pluginRepository>
+		<pluginRepository> 
+    <id>maven2</id> 
+    <url>https://repo.maven.apache.org/maven2/</url> 
+  </pluginRepository>
     </pluginRepositories>
 <!--<pluginRepositories>
    <pluginRepository> 
