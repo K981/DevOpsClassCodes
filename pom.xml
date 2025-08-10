@@ -57,14 +57,16 @@
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
+			id>maven2</id> 
+    <url>https://repo.maven.apache.org/maven2/</url>
         </pluginRepository>
     </pluginRepositories>
-<pluginRepositories>
+<!--<pluginRepositories>
    <pluginRepository> 
     <id>maven2</id> 
     <url>https://repo.maven.apache.org/maven2/</url> 
   </pluginRepository> 
-</pluginRepositories>
+</pluginRepositories>-->
 
     <dependencies>
         <dependency>
