@@ -1,87 +1,75 @@
-<build>
+<?xml version="1.0" encoding="UTF-8"?>
 
-    <plugins>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 
-        <!-- Maven Compiler Plugin -->
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.2</version>
+         xsi:schemaLocation="
+         http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-            <configuration>
-                <source>1.8</source>
-                <target>1.8</target>
-            </configuration>
-        </plugin>
+    <modelVersion>4.0.0</modelVersion>
 
-        <!-- Jetty Plugin -->
-        <plugin>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-maven-plugin</artifactId>
-            <version>9.2.3.v20140905</version>
-        </plugin>
+    <groupId>com.edurekademo.tutorial</groupId>
+    <artifactId>addressbook</artifactId>
+    <version>2.0</version>
 
-        <!-- WAR Plugin -->
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-war-plugin</artifactId>
-            <version>3.4.0</version>
-        </plugin>
+    <packaging>war</packaging>
 
-        <!-- Surefire Plugin -->
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <version>2.19.1</version>
+    <name>addressbook</name>
 
-            <configuration>
-                <parallel>methods</parallel>
-                <threadCount>10</threadCount>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
 
-                <includes>
-                    <include>**/Test*.java</include>
-                    <include>**/Test.java</include>
-                    <include>**/TestCase.java</include>
-                </includes>
+    <dependencies>
 
-                <excludes>
-                    <exclude>**/*Abstract*Test.java</exclude>
-                </excludes>
-            </configuration>
-        </plugin>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
 
-        <!-- JaCoCo Plugin -->
-        <plugin>
-            <groupId>org.jacoco</groupId>
-            <artifactId>jacoco-maven-plugin</artifactId>
-            <version>${jacoco.version}</version>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
 
-            <executions>
+    </dependencies>
 
-                <execution>
-                    <id>jacoco-initialize</id>
+    <build>
 
-                    <goals>
-                        <goal>prepare-agent</goal>
-                    </goals>
-                </execution>
+        <finalName>addressbook</finalName>
 
-                <execution>
-                    <id>jacoco-site</id>
+        <plugins>
 
-                    <phase>package</phase>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
 
-                    <goals>
-                        <goal>report</goal>
-                    </goals>
-                </execution>
+                <artifactId>maven-compiler-plugin</artifactId>
 
-            </executions>
+                <version>3.8.1</version>
 
-        </plugin>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
 
-    </plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
 
-    <finalName>addressbook</finalName>
+                <artifactId>maven-war-plugin</artifactId>
 
-</build>
+                <version>3.4.0</version>
+            </plugin>
+
+        </plugins>
+
+    </build>
+
+</project>
